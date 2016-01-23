@@ -1,9 +1,12 @@
-﻿using NUnit.Framework;
+﻿using System.Linq;
+using Microsoft.SqlServer.Server;
+using NUnit.Framework;
 
 namespace UniqueChar
 {
     public static class StringHelper
     {
+        // O(n)
         public static bool HasUniqueChar(this string source)
         {
             var existingChar = new bool[char.MaxValue];
@@ -12,6 +15,18 @@ namespace UniqueChar
             {
                 if (existingChar[c]) return false;
                 existingChar[c] = true;
+            }
+            return true;
+        }
+        
+
+        // O(n log2(n))
+        public static bool HasUniqueCharByOrdering(this string source)
+        {
+           var orderedSource = source.OrderBy(c => c).ToArray();
+            for (int i = 0; i < orderedSource.Length -1; i++)
+            {
+                if (orderedSource[i] == orderedSource[i + 1]) return false;
             }
             return true;
         }
@@ -48,6 +63,15 @@ namespace UniqueChar
         public void HasUniqueLowerChar_Tests(string source, bool expected)
         {
             Assert.That(source.HasUniqueLowerChar(), Is.EqualTo(expected));
+        }
+
+
+        [TestCase("abcdefghij", true)]
+        [TestCase("aa", false)]
+        [TestCase("abcdefghijabcdefghij", false)]
+        public void HasUniqueCharByOrdering_Tests(string source, bool expected)
+        {
+            Assert.That(source.HasUniqueCharByOrdering, Is.EqualTo(expected));
         }
     }
 }
