@@ -34,6 +34,8 @@ namespace ArraysAndStrings
 
         public static bool HasUniqueLowerChar(this string source)
         {
+            source = source.ToLowerInvariant();
+
             var existingChar = 0;
 
             foreach (var c in source)
