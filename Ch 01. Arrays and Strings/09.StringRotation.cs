@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArraysAndStrings
 {
-    class Program
+    class StringRotation
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

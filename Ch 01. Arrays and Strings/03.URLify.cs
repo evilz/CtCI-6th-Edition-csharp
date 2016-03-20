@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace ArraysAndStrings
 {
@@ -42,6 +37,45 @@ namespace ArraysAndStrings
                 }
             }
         }
+
+        public static string UrlifySpace(this string input)
+        {
+            if (input == null) return null;
+
+            const string replacer = "%20";
+            const char replaced = ' ';
+            var newLength = input.Length;
+
+            foreach (var c in input)
+            {
+                if (c == replaced)
+                {
+                    newLength += replacer.Length - 1;
+                }
+            }
+
+            var newStringContent = new char[newLength];
+
+            for (int i = 0, j = 0; i < input.Length; i++)
+            {
+                if (input[i] == replaced)
+                {
+                    for (int k = 0; k < replacer.Length; k++)
+                    {
+                        newStringContent[j] = replacer[k];
+                        j++;
+                    }
+                }
+                else
+                {
+                    newStringContent[j] = input[i];
+                    j++;
+                }
+
+            }
+
+            return new string(newStringContent);
+        }
     }
 
     public class URLifyExtTests
@@ -52,6 +86,15 @@ namespace ArraysAndStrings
             var arr = input.ToCharArray();
             arr.URLify(input.Trim().Length);
             return new string(arr);
+        }
+
+        [TestCase("abc", "abc")]
+        [TestCase("ab c", "ab%20c")]
+        [TestCase(" ", "%20")]
+        [TestCase(null, null)]
+        public void Should_Replace_space_by_percent20(string input, string expected)
+        {
+            Assert.That(input.UrlifySpace(), Is.EqualTo(expected));
         }
     }
 }
