@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="02.KthToLast.cs" />
     <Compile Include="01.RemoveDuplicates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -20,3 +20,4 @@ Solution in c#
 ## Ch 02. Linked Lists
 
 - [01.RemoveDuplicates](Ch 02. Linked Lists/01.RemoveDuplicates.cs)
+- [02.KthToLast](Ch 02. Linked Lists/02.KthToLast.cs)
