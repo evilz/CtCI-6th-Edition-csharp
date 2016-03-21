@@ -1,5 +1,9 @@
-# coding-problems
+# CtCI-6th-Edition
 
-Easy :
+Solutions for Cracking the Coding Interview 6th Edition by Gayle Laakmann McDowell.
 
-- [Unique char](https://github.com/evilz/coding-problems/tree/master/coding-problems/UniqueChar)
+Solution in c#
+
+Ch 01. Arrays and Strings :
+
+- [01.UniqueChar](Ch 01. Arrays and Strings/01.UniqueChar.cs)

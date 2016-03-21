@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace ArraysAndStrings
 {
@@ -41,24 +35,24 @@ namespace ArraysAndStrings
 
     public class RotateMatrixTexts
         {
-            [Test]
-            public void Should_Return_rotated_matrix_by_90_Clockwise()
-            {
-                var matrix = new int[3][];
-                matrix[0] = new[] { 1, 2, 3 };
-                matrix[1] = new[] { 4, 5, 6 };
-                matrix[2] = new[] { 7, 8, 9 };
+        [Test]
+        public void Should_Return_rotated_matrix_by_90_Clockwise()
+        {
+            var matrix = new int[3][];
+            matrix[0] = new[] { 1, 2, 3 };
+            matrix[1] = new[] { 4, 5, 6 };
+            matrix[2] = new[] { 7, 8, 9 };
 
-                var expexcted = new int[3][];
-                expexcted[0] = new[] { 7, 4, 1 };
-                expexcted[1] = new[] { 8, 5, 2 };
-                expexcted[2] = new[] { 9, 6, 3 };
+            var expexcted = new int[3][];
+            expexcted[0] = new[] { 7, 4, 1 };
+            expexcted[1] = new[] { 8, 5, 2 };
+            expexcted[2] = new[] { 9, 6, 3 };
 
-                 matrix.Rotate();
+            matrix.Rotate();
 
-                // Assert
-                Assert.That(matrix, Is.EqualTo(expexcted));
-            }
+            // Assert
+            Assert.That(matrix, Is.EqualTo(expexcted));
+        }
 
         [Test]
         public void Should_Return_rotated_matrixOddSize_by_90_Clockwise()
@@ -80,6 +74,5 @@ namespace ArraysAndStrings
             // Assert
             Assert.That(matrix, Is.EqualTo(expexcted));
         }
-
-    }
+        }
     }
