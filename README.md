@@ -4,7 +4,7 @@ Solutions for Cracking the Coding Interview 6th Edition by Gayle Laakmann McDowe
 
 Solution in c#
 
-Ch 01. Arrays and Strings :
+## Ch 01. Arrays and Strings :
 
 - [01.UniqueChar](Ch 01. Arrays and Strings/01.UniqueChar.cs)
 - [02.CheckPermutation](Ch 01. Arrays and Strings/02.CheckPermutation.cs)
@@ -16,3 +16,7 @@ Ch 01. Arrays and Strings :
 - [08.ZeroMatrix](Ch 01. Arrays and Strings/08.ZeroMatrix.cs)
 - [09.StringRotation](Ch 01. Arrays and Strings/09.StringRotation.cs)
 - [10.ReverseString](Ch 01. Arrays and Strings/10.ReverseString.cs)
+
+## Ch 02. Linked Lists
+
+- [01.RemoveDuplicates](Ch 02. Linked Lists/01.RemoveDuplicates.cs)
